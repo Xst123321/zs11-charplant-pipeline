@@ -1,3 +1,7 @@
+import matplotlib
+matplotlib.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei', 'DejaVu Sans']
+matplotlib.rcParams['axes.unicode_minus'] = False
+
 # 图一：召回率对比图
 import matplotlib.pyplot as plt
 # 数据
