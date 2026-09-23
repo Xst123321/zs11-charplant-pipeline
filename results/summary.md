@@ -49,3 +49,15 @@
 ### A/C 亚基因组预测规模
 
 ![Subgenome scripts](../assets/subgenome_scripts.png)
+
+### 质控指标
+
+![QC metrics](../assets/qc_metrics.png)
+
+### 训练曲线
+
+![Training curves](../assets/training_curves.png)
+
+### 染色体分布
+
+![Chromosome distribution](../assets/chr_ocr_distribution.png)
