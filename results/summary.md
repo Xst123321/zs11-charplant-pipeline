@@ -34,4 +34,18 @@
 - C 亚基因组全量预测结果（已完成）
 - 1bp vs 10bp 步长对比
 - 全基因组召回率（已完成）
-- 预测 OCR 的 H3K4me3 信号富集分析
+- 预测 OCR 的 H3K4me3 信号富集分析（暂时找不到ZS11.v0相同规格文件）
+
+## 5. 结果图
+
+### 召回率对比
+
+![Recall comparison](../assets/recall_comparison.png)
+
+### 预测 vs 实验 OCR 数量
+
+![OCR count comparison](../assets/ocr_count_comparison.png)
+
+### A/C 亚基因组预测规模
+
+![Subgenome scripts](../assets/subgenome_scripts.png)
