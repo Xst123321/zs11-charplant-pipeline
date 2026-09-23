@@ -47,7 +47,7 @@ python ../src/de_novo_prediction_10bp.py -g /tmp/A_subgenome.fa -l 20000 -t 0.5 
 nohup bash -c 'for f in split_A_10bp_*.py; do output="whole_predict_fasta${f%.py}.txt"; if [ -f "$output" ]; then echo "Skipping $f"; continue; fi; echo "Running $f..."; python $f; done' > run_A_10bp.log 2>&1 &
 ```
 
-结果：A 亚基因组 1962 个脚本全部完成，预测 OCR 已生成，与 C 亚基因组同意合并后同意评估。
+结果：A 亚基因组 1962 个脚本全部完成，预测 OCR 已生成，与 C 亚基因组统一合并后同意评估。
 
 ## 4. C 亚基因组预测
 
