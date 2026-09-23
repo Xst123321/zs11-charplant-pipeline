@@ -47,18 +47,17 @@ python ../src/de_novo_prediction_10bp.py -g /tmp/A_subgenome.fa -l 20000 -t 0.5 
 nohup bash -c 'for f in split_A_10bp_*.py; do output="whole_predict_fasta${f%.py}.txt"; if [ -f "$output" ]; then echo "Skipping $f"; continue; fi; echo "Running $f..."; python $f; done' > run_A_10bp.log 2>&1 &
 ```
 
-结果：A 亚基因组 1962 个脚本全部完成，预测 OCR 已生成，与 C 亚基因组统一合并后同意评估。
+结果：A 亚基因组 1962 个脚本全部完成，预测 OCR 已生成，与 C 亚基因组合并后统一评估。
 
 ## 4. C 亚基因组预测
 
 ```bash
 conda activate atac
-samtools faidx /mnt/e/work/zs11_atac/genome/Brassica_napus.ZS11.v0.genome.fa scaffoldC01 
-scaffoldC02 scaffoldC03 scaffoldC04 scaffoldC05 scaffoldC06 scaffoldC07 scaffoldC08 scaffoldC09 > /tmp/C_subgenome.fa conda 
+samtools faidx /mnt/e/work/zs11_atac/genome/Brassica_napus.ZS11.v0.genome.fa scaffoldC01 scaffoldC02 scaffoldC03 scaffoldC04 scaffoldC05 scaffoldC06 scaffoldC07 scaffoldC08 scaffoldC09 > /tmp/C_subgenome.fa conda 
 
 activate charplant-cpu
-cd /mnt/e/work/zs11_atac/CharPlant/de_novo_prediction python ../src/de_novo_prediction_10bp.py -g 
-/tmp/C_subgenome.fa -l 20000 -t 0.5 -o split_C_10bp_ 
+cd /mnt/e/work/zs11_atac/CharPlant/de_novo_prediction
+python ../src/de_novo_prediction_10bp.py -g /tmp/C_subgenome.fa -l 20000 -t 0.5 -o split_C_10bp_ 
 ```
 
 生成 2843 个预测脚本，用断点续跑方式批量执行。
@@ -81,3 +80,6 @@ sort -k1,1 -k2,2n AC_10bp_predicted_ocr.bed | bedtools merge -i - > AC_10bp_pred
 
 全基因组召回率：18,247 / 19,041 = 95.8%。
 
+## 6. 结果图
+
+详见 [results/summary.md](../results/summary.md)。
